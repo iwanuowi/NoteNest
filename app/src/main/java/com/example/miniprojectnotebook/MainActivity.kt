@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Log.e("firestore", "Error adding note", e)
             }
-        db.collection("users").addSnapshotListener(MetadataChanges.INCLUDE) { snap, e ->
+        db.collection("notes").addSnapshotListener(MetadataChanges.INCLUDE) { snap, e ->
             if (e != null) { Log.e("FS", "LISTEN FAILED", e); return@addSnapshotListener }
             Log.d("FS", "docs=${snap?.size()} fromCache=${snap?.metadata?.isFromCache} pending=${snap?.metadata?.hasPendingWrites()}")
         }
