@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "394756029425",
+    "project_id": "notenest-7da73",
+    "storage_bucket": "notenest-7da73.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394756029425:android:a824abc0de44197e822250",
+        "android_client_info": {
+          "package_name": "com.example.miniprojectnotebook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvgeuumbprZZJeK8ae5e_U7k7Z-dV7pLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
