@@ -27,30 +27,30 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val db = Firebase.firestore
-
-        // Create a new note
-        val note = hashMapOf(
-            "title" to "My First Note",
-            "content" to "Remember to finish my Android project.",
-            "createdAt" to System.currentTimeMillis()
-        )
-
-        // Save the note with a generated ID
-        db.collection("notes")
-            .add(note)
-            .addOnSuccessListener { documentReference ->
-                Log.d(
-                    "firestore",
-                    "Note added with ID: ${documentReference.id}"
-                )
-            }
-            .addOnFailureListener { e ->
-                Log.e("firestore", "Error adding note", e)
-            }
-        db.collection("notes").addSnapshotListener(MetadataChanges.INCLUDE) { snap, e ->
-            if (e != null) { Log.e("FS", "LISTEN FAILED", e); return@addSnapshotListener }
-            Log.d("FS", "docs=${snap?.size()} fromCache=${snap?.metadata?.isFromCache} pending=${snap?.metadata?.hasPendingWrites()}")
-        }
+//        val db = Firebase.firestore
+//
+//        // Create a new note
+//        val note = hashMapOf(
+//            "title" to "My First Note",
+//            "content" to "Remember to finish my Android project.",
+//            "createdAt" to System.currentTimeMillis()
+//        )
+//
+//        // Save the note with a generated ID
+//        db.collection("notes")
+//            .add(note)
+//            .addOnSuccessListener { documentReference ->
+//                Log.d(
+//                    "firestore",
+//                    "Note added with ID: ${documentReference.id}"
+//                )
+//            }
+//            .addOnFailureListener { e ->
+//                Log.e("firestore", "Error adding note", e)
+//            }
+//        db.collection("notes").addSnapshotListener(MetadataChanges.INCLUDE) { snap, e ->
+//            if (e != null) { Log.e("FS", "LISTEN FAILED", e); return@addSnapshotListener }
+//            Log.d("FS", "docs=${snap?.size()} fromCache=${snap?.metadata?.isFromCache} pending=${snap?.metadata?.hasPendingWrites()}")
+//        }
     }
 }
