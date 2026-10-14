@@ -34,5 +34,7 @@ class MainActivity : AppCompatActivity() {
 
             insets
         }
+
+//        AuthService.logout()
     }
 }

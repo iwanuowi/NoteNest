@@ -44,9 +44,27 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_home_to_login"
-            app:destination="@+id/loginFragment"/> <action
+            app:destination="@+id/loginFragment"/>
+        <action
             android:id="@+id/action_home_to_register"
             app:destination="@+id/registerFragment"/>
+        <action
+            android:id="@+id/action_home_to_addNote"
+            app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/action_home_to_noteDetail"
+            app:destination="@id/noteDetailFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.example.miniprojectnotebook.ui.manage.add.AddNoteFragment"
+        android:label="New Note" />
+
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.miniprojectnotebook.ui.detail.NoteDetailFragment"
+        android:label="Note Details" />
+
 
 </navigation>
