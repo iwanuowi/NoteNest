@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.miniprojectnotebook.R
@@ -31,8 +32,21 @@ class RegisterFragment : Fragment() {
             val password = binding.etPassword.text.toString().trim()
             val confirmPassword = binding.etConfirmPassword.text.toString().trim()
 
-            if(email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            } else if (password != confirmPassword) {
+                Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
+            } else {
+                viewModel.register(email, password)
+            }
+        }
 
+        viewModel.registerResult.observe(viewLifecycleOwner) { result ->
+            if (result == "SUCCESS") {
+                Toast.makeText(requireContext(), "Account created successfully!", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.loginFragment)
+            } else {
+                Toast.makeText(requireContext(), result, Toast.LENGTH_LONG).show()
             }
         }
 
