@@ -29,7 +29,7 @@ class RegisterFragment : Fragment() {
         }
 
         binding.tvLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_login)
+            findNavController().navigate(R.id.action_register_to_login)
         }
     }
 }

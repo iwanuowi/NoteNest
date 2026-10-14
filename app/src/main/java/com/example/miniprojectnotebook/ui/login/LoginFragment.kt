@@ -32,7 +32,7 @@ class LoginFragment : Fragment() {
             ).show()
         }
         binding.tvRegister.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_login)
+            findNavController().navigate(R.id.action_login_to_register)
         }
     }
 }
