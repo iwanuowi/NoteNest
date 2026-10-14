@@ -25,12 +25,5 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_login)
-        }
-
-        binding.btnRegister.setOnClickListener {
-            findNavController().navigate(R.id.action_home_to_register)
-        }
     }
 }
