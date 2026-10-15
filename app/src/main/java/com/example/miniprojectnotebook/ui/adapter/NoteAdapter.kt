@@ -1,6 +1,7 @@
 package com.example.miniprojectnotebook.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,8 @@ import androidx.core.os.bundleOf
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     private var notes = emptyList<Notes>()
+    private var showRestoreButton = false
+    var onRestoreClick: ((Notes) -> Unit)? = null
 
     class NoteViewHolder(
         val binding: ItemNoteBinding
@@ -39,6 +42,12 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         holder.binding.tvNoteTitle.text = note.title
         holder.binding.tvNoteContent.text = note.content
 
+        holder.binding.btnRestoreNote.visibility =
+            if (showRestoreButton) View.VISIBLE else View.GONE
+
+        holder.binding.btnRestoreNote.setOnClickListener {
+            onRestoreClick?.invoke(note)
+        }
         holder.binding.root.setOnClickListener {
             val bundle = bundleOf(
                 "noteId" to note.id,
@@ -62,6 +71,11 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     fun updateNotes(newNotes: List<Notes>) {
         notes = newNotes
+        notifyDataSetChanged()
+    }
+
+    fun showRestoreButton(show: Boolean) {
+        showRestoreButton = show
         notifyDataSetChanged()
     }
 }

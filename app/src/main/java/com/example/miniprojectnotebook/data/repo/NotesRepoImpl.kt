@@ -23,6 +23,13 @@ class NotesRepoImpl(
             }
     }
 
+    override suspend fun getTrashedNotes(): List<Notes> {
+        return getNotesCollection().get().await().documents.mapNotNull{
+            val note = it.toObject(Notes::class.java)
+            note?.copy(id = it.id)
+        }.filter { it.isTrashed }
+    }
+
     override suspend fun addNote(note: Notes) {
         val document = getNotesCollection().document()
         document.set(note.copy(id = document.id)).await()
