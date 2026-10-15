@@ -41,8 +41,12 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
         holder.binding.root.setOnClickListener {
             val bundle = bundleOf(
+                "noteId" to note.id,
                 "noteTitle" to note.title,
-                "noteContent" to note.content
+                "noteContent" to note.content,
+                "noteColour" to note.colour,
+                "noteDate" to note.date,
+                "noteIsTrashed" to note.isTrashed
             )
 
             it.findNavController().navigate(

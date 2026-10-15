@@ -54,6 +54,9 @@
         <action
             android:id="@+id/action_home_to_noteDetail"
             app:destination="@id/noteDetailFragment" />
+        <action
+            android:id="@+id/action_home_to_trash"
+            app:destination="@id/trashFragment" />
     </fragment>
 
     <fragment
@@ -61,10 +64,25 @@
         android:name="com.example.miniprojectnotebook.ui.manage.add.AddNoteFragment"
         android:label="New Note" />
 
+
     <fragment
         android:id="@+id/noteDetailFragment"
         android:name="com.example.miniprojectnotebook.ui.detail.NoteDetailFragment"
-        android:label="Note Details" />
+        android:label="Note Details">
 
+        <action
+            android:id="@+id/action_noteDetail_to_editNote"
+            app:destination="@id/editNoteFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editNoteFragment"
+        android:name="com.example.miniprojectnotebook.ui.edit.EditNoteFragment"
+        android:label="Edit Note" />
+    <fragment
+        android:id="@+id/trashFragment"
+        android:name="com.example.miniprojectnotebook.ui.trash.TrashFragment"
+        android:label="Trash" />
 
 </navigation>

@@ -63,6 +63,26 @@ class HomeFragment : Fragment() {
             )
         }
 
+        binding.btnTrash.setOnClickListener {
+            findNavController().navigate(R.id.action_home_to_trash)
+        }
+
+        findNavController()
+            .currentBackStackEntry
+            ?.savedStateHandle
+            ?.getLiveData<Boolean>("noteDeleted")
+            ?.observe(viewLifecycleOwner) { deleted ->
+
+                if (deleted) {
+                    viewModel.loadNotes()
+
+                    findNavController()
+                        .currentBackStackEntry
+                        ?.savedStateHandle
+                        ?.remove<Boolean>("noteDeleted")
+                }
+            }
+
         viewModel.loadNotes()
     }
 

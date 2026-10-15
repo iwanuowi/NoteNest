@@ -11,6 +11,7 @@ interface NotesRepo {
     suspend fun updateNote(note: Notes)
 
     suspend fun deleteNote(note: Notes)
+    suspend fun getTrashedNotes(): List<Notes>
 
     companion object {
         fun getInstance() = NotesRepoImpl(

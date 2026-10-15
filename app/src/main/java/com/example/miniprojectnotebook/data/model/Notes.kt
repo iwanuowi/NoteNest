@@ -6,5 +6,8 @@ data class Notes (
     val content: String = "",
     val colour: String = "#FFF3E0",
     val date: Long = System.currentTimeMillis(),
-    val isTrashed: Boolean = false
+    @get:com.google.firebase.firestore.PropertyName("trashed")
+    @set:com.google.firebase.firestore.PropertyName("trashed")
+    var isTrashed: Boolean = false
+
 )
