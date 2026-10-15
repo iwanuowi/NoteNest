@@ -1,57 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="30dp"
-
+    android:background="#F8F5EF"
+    android:padding="28dp"
     tools:context=".ui.login.LoginFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="#FF9800"
-        android:text="Welcome Back"/>
+        android:text="Pocketbook."
+        android:textColor="#303B2C"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="36dp"
+        android:text="Welcome back.\nYour thoughts are waiting for you."
+        android:textColor="#82786B"
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EMAIL ADDRESS"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etUser"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
         android:padding="14dp"
-        android:backgroundTint="#FF5722"
+        android:backgroundTint="#A7BC98"
+        android:hint="Enter your email"
         android:inputType="textEmailAddress"
-        android:hint="Email"/>
+        android:autofillHints="emailAddress"
+        android:textColor="#303B2C"
+        android:textColorHint="#9B968D" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="PASSWORD"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
         android:padding="14dp"
-        android:backgroundTint="#FF5722"
+        android:backgroundTint="#A7BC98"
+        android:hint="Enter your password"
         android:inputType="textPassword"
-        android:hint="Password"/>
+        android:autofillHints="password"
+        android:textColor="#303B2C"
+        android:textColorHint="#9B968D" />
+
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#52684E"
         android:text="Login"
         android:textAllCaps="false"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#FF5722" />
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
         android:text="Don't have an account? Register"
-        android:textSize="15sp"
-        android:textColor="#FF5722"
-        android:padding="16dp"
-        android:layout_marginTop="8dp" />
-
-
-
+        android:textColor="#52684E"
+        android:textSize="14sp" />
 
 </LinearLayout>

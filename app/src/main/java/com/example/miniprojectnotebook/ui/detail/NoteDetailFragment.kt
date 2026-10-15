@@ -41,6 +41,12 @@ class NoteDetailFragment : Fragment() {
         binding.tvDetailTitle.text = title
         binding.tvDetailContent.text = content
 
+        val noteColour = arguments?.getString("noteColour") ?: "#FFF3E0"
+
+        binding.root.setBackgroundColor(
+            android.graphics.Color.parseColor(noteColour)
+        )
+
         findNavController()
             .currentBackStackEntry
             ?.savedStateHandle
@@ -53,6 +59,12 @@ class NoteDetailFragment : Fragment() {
                 binding.tvDetailContent.text =
                     bundle.getString("noteContent", "")
 
+                val updatedColour = bundle.getString("noteColour", "#FFF3E0")
+
+                binding.root.setBackgroundColor(
+                    android.graphics.Color.parseColor(updatedColour)
+                )
+
                 arguments?.putAll(bundle)
 
                 findNavController()
@@ -64,8 +76,14 @@ class NoteDetailFragment : Fragment() {
         binding.btnEditNote.setOnClickListener {
             val bundle = Bundle().apply {
                 putString("noteId", arguments?.getString("noteId"))
-                putString("noteTitle", title)
-                putString("noteContent", content)
+                putString(
+                    "noteTitle",
+                    binding.tvDetailTitle.text.toString()
+                )
+                putString(
+                    "noteContent",
+                    binding.tvDetailContent.text.toString()
+                )
                 putString("noteColour", arguments?.getString("noteColour"))
                 putLong(
                     "noteDate",

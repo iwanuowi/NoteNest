@@ -21,6 +21,22 @@
         app:layout_constraintHorizontal_bias="0" />
 
     <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:minHeight="0dp"
+        android:layout_marginEnd="8dp"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:backgroundTint="#52684E"
+        app:cornerRadius="14dp"
+        app:layout_constraintTop_toTopOf="@id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintEnd_toStartOf="@id/btnTrash" />
+
+    <Button
         android:id="@+id/btnTrash"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
@@ -89,6 +105,15 @@
         app:layout_constraintTop_toBottomOf="@id/searchCard"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Spinner
+        android:id="@+id/spinnerSortColour"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#52684E"
+        app:layout_constraintTop_toBottomOf="@id/tvNotesHeading"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/tvEmpty"
         android:layout_width="0dp"
@@ -99,7 +124,7 @@
         android:textColor="#82786B"
         android:textSize="16sp"
         android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@id/tvNotesHeading"
+        app:layout_constraintTop_toBottomOf="@id/spinnerSortColour"
         app:layout_constraintBottom_toTopOf="@id/btnAddNote"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -111,7 +136,7 @@
         android:layout_marginTop="14dp"
         android:clipToPadding="false"
         android:paddingBottom="12dp"
-        app:layout_constraintTop_toBottomOf="@id/tvNotesHeading"
+        app:layout_constraintTop_toBottomOf="@id/spinnerSortColour"
         app:layout_constraintBottom_toTopOf="@id/btnAddNote"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

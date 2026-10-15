@@ -4,36 +4,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:background="#FFF3E0"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="YOUR NOTE"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.12"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/tvDetailTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Note Title"
-        android:textSize="26sp"
+        android:textColor="#303B2C"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="20dp" />
 
-    <TextView
-        android:id="@+id/tvDetailContent"
+    <View
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:background="#A7BC98"
+        android:layout_marginBottom="24dp" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Note content appears here"
-        android:textSize="16sp"
-        android:gravity="top" />
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/tvDetailContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note content appears here"
+            android:textColor="#625F56"
+            android:textSize="16sp"
+            android:lineSpacingExtra="6dp"
+            android:gravity="top" />
+
+    </ScrollView>
 
     <Button
         android:id="@+id/btnEditNote"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Edit Note" />
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:text="Edit Note"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#52684E" />
+
     <Button
         android:id="@+id/btnDeleteNote"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:text="Move to Trash" />
+        android:text="Move to Trash"
+        android:textAllCaps="false"
+        android:textColor="#795548"
+        android:textSize="15sp"
+        android:backgroundTint="#EDE3D7" />
 
 </LinearLayout>

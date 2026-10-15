@@ -4,14 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:background="#F8F5EF"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/tvTrashTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trash"
-        android:textSize="26sp"
+        android:text="Recently deleted."
+        android:textColor="#303B2C"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -20,10 +22,12 @@
         android:id="@+id/tvTrashEmpty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trash is empty"
+        android:text="Your trash is empty.\nAll your notes are safe!"
+        android:textColor="#82786B"
         android:textSize="16sp"
+        android:gravity="center"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/tvTrashTitle"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -32,7 +36,8 @@
         android:id="@+id/rvTrashNotes"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintTop_toBottomOf="@id/tvTrashTitle"
         app:layout_constraintBottom_toTopOf="@id/btnBackHome"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,10 +45,17 @@
 
     <Button
         android:id="@+id/btnBackHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
         android:text="Back to Home"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:backgroundTint="#52684E"
+        android:layout_marginTop="12dp"
+        app:cornerRadius="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

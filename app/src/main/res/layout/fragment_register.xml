@@ -1,69 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="30dp"
-
+    android:background="#F8F5EF"
+    android:padding="28dp"
     tools:context=".ui.login.LoginFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Create account."
+        android:textColor="#303B2C"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="#FF9800"
-        android:text="Create Account"/>
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="28dp"
+        android:text="Create a space for your ideas and memories."
+        android:textColor="#82786B"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EMAIL ADDRESS"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Email"
-        android:inputType="text"
+        android:layout_height="54dp"
+        android:layout_marginTop="6dp"
         android:padding="14dp"
-        android:backgroundTint="#FF5722" />
+        android:backgroundTint="#A7BC98"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress"
+        android:autofillHints="emailAddress"
+        android:textColor="#303B2C"
+        android:textColorHint="#9B968D" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="PASSWORD"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:layout_height="54dp"
+        android:layout_marginTop="6dp"
         android:padding="14dp"
+        android:backgroundTint="#A7BC98"
+        android:hint="Create a password"
+        android:inputType="textPassword"
+        android:autofillHints="newPassword"
+        android:textColor="#303B2C"
+        android:textColorHint="#9B968D" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:backgroundTint="#FF5722" />
+        android:text="CONFIRM PASSWORD"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etConfirmPassword"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
+        android:layout_height="54dp"
+        android:layout_marginTop="6dp"
         android:padding="14dp"
-        android:layout_marginTop="14dp"
-        android:backgroundTint="#FF5722" />
+        android:backgroundTint="#A7BC98"
+        android:hint="Enter your password again"
+        android:inputType="textPassword"
+        android:autofillHints="newPassword"
+        android:textColor="#303B2C"
+        android:textColorHint="#9B968D" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#52684E"
         android:text="Create Account"
         android:textAllCaps="false"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#FF5722" />
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="12dp"
         android:text="Already have an account? Login"
-        android:textSize="15sp"
-        android:textColor="#FF5722"
-        android:padding="16dp"
-        android:layout_marginTop="8dp" />
-
+        android:textColor="#52684E"
+        android:textSize="14sp" />
 
 </LinearLayout>

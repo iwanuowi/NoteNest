@@ -12,6 +12,7 @@ import com.example.miniprojectnotebook.data.model.Notes
 import com.example.miniprojectnotebook.data.repo.NotesRepo
 import com.example.miniprojectnotebook.databinding.FragmentAddNoteBinding
 import kotlinx.coroutines.launch
+import com.example.miniprojectnotebook.R
 
 class AddNoteFragment : Fragment() {
 
@@ -49,9 +50,19 @@ class AddNoteFragment : Fragment() {
 
             viewLifecycleOwner.lifecycleScope.launch {
                 try {
+                    val colour = when (binding.rgNoteColour.checkedRadioButtonId) {
+                        R.id.rbRed -> "#FFCDD2"
+                        R.id.rbBlue -> "#BBDEFB"
+                        R.id.rbGreen -> "#C8E6C9"
+                        R.id.rbYellow -> "#FFF9C4"
+                        R.id.rbPink -> "#F8BBD0"
+                        else -> "#FFF3E0"
+                    }
+
                     val note = Notes(
                         title = title,
-                        content = content
+                        content = content,
+                        colour = colour
                     )
 
                     repository.addNote(note)

@@ -44,6 +44,9 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         holder.binding.tvNoteTitle.text = note.title
         holder.binding.tvNoteContent.text = note.content
 
+        holder.binding.root.setCardBackgroundColor(
+            android.graphics.Color.parseColor(note.colour)
+        )
         holder.binding.btnRestoreNote.visibility =
             if (showRestoreButton) View.VISIBLE else View.GONE
 

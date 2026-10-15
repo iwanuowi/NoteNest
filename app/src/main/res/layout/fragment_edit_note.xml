@@ -4,38 +4,145 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:background="#F8F5EF"
+    android:padding="24dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Note"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="24dp" />
+        android:text="Edit your note"
+        android:textColor="#303B2C"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="28dp"
+        android:text="Make changes to your thoughts."
+        android:textColor="#82786B"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TITLE"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etEditTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#A7BC98"
         android:hint="Note title"
         android:inputType="textCapSentences"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="#303B2C"
+        android:textColorHint="#9B968D"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="YOUR THOUGHTS"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etEditContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/white"
         android:gravity="top"
-        android:hint="Write your note here..."
+        android:hint="Edit your note here..."
         android:inputType="textCapSentences|textMultiLine"
-        android:paddingTop="16dp" />
+        android:padding="16dp"
+        android:scrollbars="vertical"
+        android:textColor="#303B2C"
+        android:textColorHint="#9B968D"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="NOTE COLOUR"
+        android:textColor="#52684E"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
+    <RadioGroup
+        android:id="@+id/rgEditNoteColour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <RadioButton
+            android:id="@+id/rbEditRed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="#F44336"
+            android:text="Red"
+            android:textSize="11sp" />
+
+        <RadioButton
+            android:id="@+id/rbEditBlue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="#2196F3"
+            android:text="Blue"
+            android:textSize="11sp" />
+
+        <RadioButton
+            android:id="@+id/rbEditGreen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="#4CAF50"
+            android:text="Green"
+            android:textSize="11sp" />
+
+        <RadioButton
+            android:id="@+id/rbEditYellow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="#FFC107"
+            android:text="Yellow"
+            android:textSize="11sp" />
+
+        <RadioButton
+            android:id="@+id/rbEditPink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="#E91E63"
+            android:text="Pink"
+            android:textSize="11sp" />
+
+    </RadioGroup>
     <Button
         android:id="@+id/btnUpdateNote"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save Changes" />
+        android:layout_height="54dp"
+        android:text="Save Changes"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#52684E" />
 
 </LinearLayout>

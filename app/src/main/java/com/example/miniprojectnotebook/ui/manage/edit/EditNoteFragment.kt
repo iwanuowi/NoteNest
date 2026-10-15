@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.miniprojectnotebook.R
 import com.example.miniprojectnotebook.data.model.Notes
 import com.example.miniprojectnotebook.data.repo.NotesRepo
 import com.example.miniprojectnotebook.databinding.FragmentEditNoteBinding
@@ -54,6 +55,14 @@ class EditNoteFragment : Fragment() {
         binding.etEditTitle.setText(title)
         binding.etEditContent.setText(content)
 
+        when (currentNote?.colour) {
+            "#FFCDD2" -> binding.rbEditRed.isChecked = true
+            "#BBDEFB" -> binding.rbEditBlue.isChecked = true
+            "#C8E6C9" -> binding.rbEditGreen.isChecked = true
+            "#FFF9C4" -> binding.rbEditYellow.isChecked = true
+            "#F8BBD0" -> binding.rbEditPink.isChecked = true
+        }
+
         binding.btnUpdateNote.setOnClickListener {
             val newTitle = binding.etEditTitle.text.toString().trim()
             val newContent = binding.etEditContent.text.toString().trim()
@@ -65,6 +74,17 @@ class EditNoteFragment : Fragment() {
 
             val oldNote = currentNote ?: return@setOnClickListener
 
+            val newColour = when (
+                binding.rgEditNoteColour.checkedRadioButtonId
+            ) {
+                R.id.rbEditRed -> "#FFCDD2"
+                R.id.rbEditBlue -> "#BBDEFB"
+                R.id.rbEditGreen -> "#C8E6C9"
+                R.id.rbEditYellow -> "#FFF9C4"
+                R.id.rbEditPink -> "#F8BBD0"
+                else -> oldNote.colour
+            }
+
             binding.btnUpdateNote.isEnabled = false
 
             viewLifecycleOwner.lifecycleScope.launch {
@@ -72,6 +92,7 @@ class EditNoteFragment : Fragment() {
                     val updatedNote = oldNote.copy(
                         title = newTitle,
                         content = newContent,
+                        colour = newColour,
                         date = oldNote.date
                     )
 
