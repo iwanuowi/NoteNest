@@ -14,7 +14,9 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     private var notes = emptyList<Notes>()
     private var showRestoreButton = false
+    private var showDeleteButton = false
     var onRestoreClick: ((Notes) -> Unit)? = null
+    var onDeleteClick: ((Notes) -> Unit)? = null
 
     class NoteViewHolder(
         val binding: ItemNoteBinding
@@ -45,9 +47,17 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         holder.binding.btnRestoreNote.visibility =
             if (showRestoreButton) View.VISIBLE else View.GONE
 
+        holder.binding.btnDeletePermanently.visibility =
+            if (showDeleteButton) View.VISIBLE else View.GONE
+
         holder.binding.btnRestoreNote.setOnClickListener {
             onRestoreClick?.invoke(note)
         }
+
+        holder.binding.btnDeletePermanently.setOnClickListener {
+            onDeleteClick?.invoke(note)
+        }
+
         holder.binding.root.setOnClickListener {
             val bundle = bundleOf(
                 "noteId" to note.id,
@@ -76,6 +86,10 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     fun showRestoreButton(show: Boolean) {
         showRestoreButton = show
+        notifyDataSetChanged()
+
+    }  fun showDeletePermanentlyButton(show: Boolean) {
+        showDeleteButton = show
         notifyDataSetChanged()
     }
 }

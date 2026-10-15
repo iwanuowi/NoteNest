@@ -41,8 +41,9 @@ class TrashFragment : Fragment() {
 
         noteAdapter = NoteAdapter()
         noteAdapter.showRestoreButton(true)
+        noteAdapter.showDeletePermanentlyButton(true)
 
-
+        // restore function
         noteAdapter.onRestoreClick = { note ->
             viewLifecycleOwner.lifecycleScope.launch {
                 try {
@@ -71,7 +72,33 @@ class TrashFragment : Fragment() {
                 }
             }
         }
+       // delete perm function
+        noteAdapter.onDeleteClick = { note ->
+            viewLifecycleOwner.lifecycleScope.launch {
+                try {
+                    repository.deleteNote(note)
 
+                    Toast.makeText(
+                        requireContext(),
+                        "Note permanently deleted",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    val trashedNotes = repository.getTrashedNotes()
+                    noteAdapter.updateNotes(trashedNotes)
+
+                    binding.tvTrashEmpty.visibility =
+                        if (trashedNotes.isEmpty()) View.VISIBLE else View.GONE
+
+                } catch (e: Exception) {
+                    Toast.makeText(
+                        requireContext(),
+                        e.localizedMessage ?: "Failed to delete note",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
 
         binding.rvTrashNotes.layoutManager =
             LinearLayoutManager(requireContext())
